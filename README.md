@@ -24,12 +24,12 @@ To add a new npm module dependency to the project and automatically adding an en
 
 ## App structure
 
-### Directories:
+### Directories
 
 - `data`: Contains raw data in csv format and parsing function
 - `public`: Contains static files that are used by the browser
-- `routes`: Handle the HTTP requests
-- `views`: Contain the handlebars templates 
+- `routes`: Handles the HTTP requests
+- `views`: Contains the handlebars templates 
 
 
 
