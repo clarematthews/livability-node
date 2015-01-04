@@ -45,6 +45,8 @@ data.init(function () {
     server.route(require('./routes/results'));
 
     server.route(require('./routes/borough'));
+
+    server.route(require('./routes/redirect'));
 });
 
 
