@@ -1,0 +1,32 @@
+<div class="container">
+    <h1> Borough qualities</h1>
+    <h3>How important are the following to you?</h3>
+    <p class="lead">Each borough has a score for the qualities listed.<br/> Rate the importance of these qualities to define their influence on the total score.</p>
+    <form action="/results" method="post">
+        {{#each categories}}
+            <div class="row">
+                <div class="col-md-3">
+                    {{.}}
+                </div>
+                <div class="col-md-4">
+                    <input name='weights' id={{spaceToDash .}} type='range'  min='0' max='100' onchange='updateBoroughs(this.id, this.value)'/>
+                </div>
+                <div class="col-md-5">
+                    <small>Very important</small>
+                </div>
+            </div>
+        {{/each}}
+        <div id="top-boroughs">
+            <h3>Top boroughs based on these rankings</h3>
+                <table class="table table-condensed table-striped weights-table">
+                    <thead>
+                        <th>Borough</th>
+                        <th>Total score</th>
+                    </thead>
+                    <tbody id="top-boroughs-table"></tbody>
+                </table>
+        </div>
+        <input type="submit" name="submit" value="See Borough Details" class="btn btn-primary btn-lg"/>
+    </form>
+</div>
+<script type="text/javascript" src="weights.js"></script>

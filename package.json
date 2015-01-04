@@ -1,0 +1,16 @@
+{
+  "name": "livability-node",
+  "version": "1.0.0",
+  "description": "Node.js version of livability app.",
+  "devDependencies": {
+    "nodemon": "^1.2.1"
+  },
+  "scripts": {
+    "start": "nodemon -e js,html index.js"
+  },
+  "dependencies": {
+    "csv": "^0.4.1",
+    "handlebars": "^2.0.0",
+    "hapi": "^8.0.0"
+  }
+}

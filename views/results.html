@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="tables">
+        <div>
+            <h1>Your most suited boroughs </h1>
+            <table id="best-boroughs" class="table table-condensed table-striped results-table">
+                <thead>
+                    <th id="borough">Borough</th>
+                    <th>Highest scoring category</th>
+                    <th>Lowest scoring category</th>
+                    <th id="score">Total score</th>
+                </thead>
+                <tbody>
+                    {{#each topBoroughs}}
+                        <tr>
+	                       <td class="borough">
+                                <a href="{{pathFor '/results' borough}}" class="btn btn-link">{{borough}}
+                                </a>
+                            </td>
+                            <td class="best">{{best}}</td>
+                            <td class="worst">{{worst}}</td>
+                            <td class="score">{{score}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h1>Your least suited boroughs </h1>
+            <table id="best-boroughs" class="table table-condensed table-striped results-table">
+                <thead>
+                    <th id="borough">Borough</th>
+                    <th>Highest scoring category</th>
+                    <th>Lowest scoring category</th>
+                    <th id="score">Total score</th>
+                </thead>
+                <tbody>
+                    {{#each bottomBoroughs}}
+                        <tr>
+                            <td class="borough">
+                                <a href="{{pathFor '/results' borough}}" class="btn btn-link">{{borough}}
+                                </a>
+                            </td>
+                            <td class="best">{{best}}</td>
+                            <td class="worst">{{worst}}</td>
+                            <td class="score">{{score}}</td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <section>
+        <div id="map-canvas" style="width: 1000px; height:600px"></div>
+    </section>
+</div>
+<script id="borough-data">
+    var data = {{{json allBoroughs}}};
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&libraries=drawing"></script>
+<script src="./lib/markerwithlabel.js"></script>
+<script src="results.js"></script>
